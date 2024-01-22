@@ -44,8 +44,8 @@ The script performs the following image processings.<br>
 <pre>
 1 Split the images and mask files into <b>train:0.7</b>,<b>valid:0.2 </b> and <b>test:0.1</b>.
 2 Create 512x512 square images from original jpg files in <b>Kvasir-SEG/images</b> folder.
-3 Create 512x512 square mask  rom original jpg files in <b>Kvasir-SEG/images</b> folder. 
-4 Create flipped and mirrored images and masks of size of 512x512 to augment the resized square images and masks.
+3 Create 512x512 square mask from original jpg files in <b>Kvasir-SEG/masks</b> folder. 
+4 Create rotated,flipped and mirrored images and masks of size 512x512 to augment the resized square images and masks.
 </pre>
 The created <b>GastrointestinalPolyp</b> dataset has the following folder structure.<br>
 
