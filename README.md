@@ -47,7 +47,7 @@ The script performs the following image processings.<br>
 3 Create 512x512 square mask  rom original jpg files in <b>Kvasir-SEG/images</b> folder. 
 4 Create flipped and mirrored images and masks of size of 512x512 to augment the resized square images and masks.
 </pre>
-The created <b>GastrointestinalPolypr</b> dataset has the following folder structure.<br>
+The created <b>GastrointestinalPolyp</b> dataset has the following folder structure.<br>
 
 <pre>
 GastrointestinalPolyp
@@ -107,7 +107,8 @@ Annotated folder contains jpg image files with bounding boxes as shown below.<br
 <h3>
 4.2 Generate TFRecord train and valid dataset
 </h3>
-By using <a href="https://github.com/sarah-antillia/AnnotationConverters">AnnotationConverter</a>,
+By using <a href="https://github.com/sarah-antillia/AnnotationConverters/blob/main/YOLO2TFRecordConverter.py">YOLO2TFRecordConverter.py</a>  in <a href="https://github.com/sarah-antillia/AnnotationConverters">
+AnnotationConverters</a>,
 we have generated TFRecord dataset from train and valid dataset in YOLO annotation.<br>
 <pre>
 TFRecord
@@ -118,7 +119,8 @@ TFRecord
 <h3>
 4.3 Generate COCO test dataset
 </h3>
-By using <a href="https://github.com/sarah-antillia/AnnotationConverters">AnnotationConverter</a>,
+By using <a href="https://github.com/sarah-antillia/AnnotationConverters/blob/main/YOLO2COCOConverter.py">YOLO2COCOConverter.py</a> in <a href="https://github.com/sarah-antillia/AnnotationConverters">
+AnnotationConverters</a>,
 we have generated COCO dataset from <b>test</b> dataset in YOLO annotation.<br>
 <pre>
 COCO
