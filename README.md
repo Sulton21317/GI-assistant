@@ -1,31 +1,20 @@
 <h2>
-GastrointestinalPolyp-Image-Dataset (2024/01/22)
+GastrointestinalPolypDetection (2024/04/22)
 </h2>
-This is a GastrointestinalPolyp dataset for Image Segmentation and Object Detection.<br>  
-On ImageMaskDataet for Segmentation, 
-please see also our first experiment 
-<a href="https://github.com/atlan-antillia/Image-Segmentation-Gastrointestinal-Polyp">Image-Segmentation-Gastrointestinal-Polyp</a>
-<br>
+Bu oshqozon-ichak kasalliklarni ednoskopik tasvirlardan aniqlash dasturi. (Bu to'liq dasturiy taminot emas Faqat kasalliklarni tasvirda belgilab beradi.)
 
-<h3>1. Dataset Citation</h3>
 
-The image dataset used here has been taken from the following web site.
+<h3>1. Dataset haqida</h3>
+Bu yerda foydalanilgan tasvir maʼlumotlar toʻplami quyidagi veb-saytdan olingan.
 </p>
 <pre>
 Kvasir-SEG Data (Polyp segmentation & detection)
 https://www.kaggle.com/datasets/debeshjha1/kvasirseg
 </pre>
 
+<br>
+<h3>2.<b>Kvasir-SEG</b>ma'lumotlar to'plami quyidagi papka tuzilishiga ega.<br></h3>
 
-<h3>
-2. Download master dataset
-</h3>
- Please download the original dataset from the following link<br>
-<pre>
-Kvasir-SEG Data (Polyp segmentation & detection)
-https://www.kaggle.com/datasets/debeshjha1/kvasirseg
-</pre>
-<b>Kvasir-SEG</b> dataset has the following folder structure.<br>
 <pre>
 Kvasir-SEG
 ├─annotated_images
@@ -35,22 +24,22 @@ Kvasir-SEG
 </pre>
 
 <h3>
-3. Create ImageMask dataset
+3. Tasvirlarni ishlov berishdan oldin tayyorlab olamiz (Preprocessing)
 </h3>
-We have created the augmented <b>test</b>, <b>train</b> and <b>valid</b> datasets from the original <b>images</b> and <b>masks</b> datasets 
-in Kvasir-SEG 
-by using Python <a href="./generator/create_master_512x512.py">create_master_512x512.py</a> script.<br>
-The script performs the following image processings.<br>
+Biz tasvirlarni <a href=".resize_images_512x512.py">resize_images_512x512.py</a> dan foydalanib 3 ta <b>train</b>, <b>test</b> va <b>valid</b> ga ajratamiz vv barcha tasvirlarni o'lchamlarini bir xil qilamiz.
+
+
+Skript quyidagicha tasvirlarni qayta ishlashni amalga oshiradi.<br>
 <pre>
-1 Split the images and mask files into <b>train:0.7</b>,<b>valid:0.2 </b> and <b>test:0.1</b>.
-2 Create 512x512 square images from original jpg files in <b>Kvasir-SEG/images</b> folder.
-3 Create 512x512 square mask from original jpg files in <b>Kvasir-SEG/masks</b> folder. 
-4 Create rotated,flipped and mirrored images and masks of size 512x512 to augment the resized square images and masks.
+1 Tasvirlarni ajratadi va fayllarni maskalaydi (segmentlaydi) <b>train:0.7</b>,<b>valid:0.2 </b> and <b>test:0.1</b>.
+2 <b>Kvasir-SEG/images</b> papkasida asl jpg fayllardan 512x512 kvadrat tasvirlar yaratadi.
+3 <b>Kvasir-SEG/masks</b> papkasidagi original jpg fayllardan 512x512 kvadrat maska yaratadi (segmentlab oladi) .
+4 Oʻlchami oʻzgartirilgan kvadrat tasvirlar va maskalarni kengaytirish uchun 512x512 oʻlchamdagi aylantirilgan, aylantirilgan va aks ettirilgan tasvirlar va maskalar yaratadi.
 </pre>
-The created <b>GastrointestinalPolyp</b> dataset has the following folder structure.<br>
+Yaratilgan <by>generated_dataset</b> ma'lumotlar to'plami quyidagi jild tuzilishiga ega.<br>
 
 <pre>
-GastrointestinalPolyp
+generated_dataset
 ├─test
 │  ├─images
 │  └─masks
@@ -61,27 +50,27 @@ GastrointestinalPolyp
     ├─images
     └─masks
 </pre>
-<b>Augmented image samples: GastrointestinalPolyp/train/images</b><br>
-<img src="./asset/GastrointestinalPolyp_train_images_sample.png" width="1024" height="auto"><br>
-<b>Augmented mask samples: GastrointestinalPolyp/train/mask</b><br>
+<b>O'zgartirilgan tasvir namunalari: generated_dataset/train/images</b><br>
+<img src="./asset/GastrointestinalPolyp_train_images_sample.png" width="1024" height="auto"><br><br>
+
+<b>Kengaytirilgan niqob namunalari: generated_dataset/train/mask </b><br>
 <img src="./asset/GastrointestinalPolyp_train_masks_sample.png" width="1024" height="auto"><br>
 
 
 <h3>
-4.Generate Annotation file
+4.Annotatsiya faylini yaratish
 </h3>
 <h3>
-4.1 Generate YOLO Annotation
+Oshqozon-ichak kasalliklarini aniqlash uchun quyidagilarni amalga oshiramiz.
 </h3>
-To generate YOLO Anntotation files from the GastrointestinalPolyp datasets, 
-please run Python script <a href="./YOLOAnnotationGenerator.py">YOLOAnnotationGenerator.py</a>.<br>
-<pre>
-python YOLOAnnotationGenerator.py
-</pre>
 
-This command generates the following YOLO folders, which contains <b>test</b>, <b>train</b> and <b>valid</b><br>
+generated_dataset ma'lumotlar to'plamidan oshqozon-ichak yarasi aniqlash va ularni belgilab boshqa tasvirda ko'rsatish
+uchun DetectedPolyps papkasini va fayllarini yaratish uchun
+<a href="./detect_polyp.py">detect_polyp.py</a> Python skriptini ishga tushiramiz.
+<pre>pyton detect_polyp.py </pre> 
+Bu buyruq quyidagi DetectedPolyps papkasini yaratadi, ularda <b>test</b>, <b>train</b> va <b>valid</b> mavjud bo'ladi
 <pre>
-./YOLO
+./DetectedPolyps
 ├─test
 │  └─annotated
 ├─train
@@ -89,7 +78,8 @@ This command generates the following YOLO folders, which contains <b>test</b>, <
 └─valid
     └─annotated
 </pre>
-For example, train folder contains a lot of jpg image files, yolo annotation text files, and annotated folder,
+Masalan, <b>train</b> papkasi juda ko'p jpg tasvir fayllari, qayta ishlangan izohli matn fayllari va izohli papka mavjud
+bo'ladi
 <br>
 <pre>
 train
@@ -100,47 +90,12 @@ train
 ├─flipped_cju0qoxqj9q6s0835b43399p4.txt
 ...
 </pre>
-Annotated folder contains jpg image files with bounding boxes as shown below.<br>
-<img src="./asset/train_annotated.png" width="1024" height="auto"><br>
- 
+Qayta ishlangan tasvirlar <b>annotated</b> papkasida quyida ko'rsatilgandek chegaralangan to'rtburchak ichida
+kasalliklar aniqlangan jpg tasvir
+fayllari mavjud bo'ladi. <br><img src="./asset/train_annotated.png" width="1024" height="auto"><br>
 
 <h3>
-4.2 Generate TFRecord train and valid dataset
+Xulosa
 </h3>
-By using <a href="https://github.com/sarah-antillia/AnnotationConverters/blob/main/YOLO2TFRecordConverter.py">YOLO2TFRecordConverter.py</a>  in <a href="https://github.com/sarah-antillia/AnnotationConverters">
-AnnotationConverters</a>,
-we have generated TFRecord dataset from train and valid dataset in YOLO annotation.<br>
-<pre>
-TFRecord
-├─train
-└─valid
-</pre>
-
-<h3>
-4.3 Generate COCO test dataset
-</h3>
-By using <a href="https://github.com/sarah-antillia/AnnotationConverters/blob/main/YOLO2COCOConverter.py">YOLO2COCOConverter.py</a> in <a href="https://github.com/sarah-antillia/AnnotationConverters">
-AnnotationConverters</a>,
-we have generated COCO dataset from <b>test</b> dataset in YOLO annotation.<br>
-<pre>
-COCO
-└─test
-</pre>
-
-<h3>
-5. GastrointestinalPolyp Dataset for EfficientDet
-</h3>
-We have finally created the following <b>GastrointestinalPolyp-EfficientDet-Dataset</b> for 
-<a href="https://github.com/google/automl/tree/master/efficientdet">efficientdet</a> object detection from TFRecord(train, valid) and COCO(test) dataset.
-<pre>
-GastrointestinalPolyp-EfficientDet-Dataset
-├─test
-├─train
-└─valid
-</pre>
-
-You can download this dataset from the googole drive 
-<a href="https://drive.google.com/file/d/1ilftnvULiFV8V1kjozJRNxvBpDe2pOE0/view?usp=sharing">
-GastrointestinalPolyp-EfficientDet-Dataset.zip</a>
-
+Bu algoritmlarni video tasvirlarga ishlatish uchun alohida video tasvirlarni frame larga bo'lib olamiz keyin. Ushbu algoritmlar yordamida undan oshqozon-ichak kasalliklarni aniqlaymiz.
 
