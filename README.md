@@ -50,10 +50,10 @@ generated_dataset
     ├─images
     └─masks
 </pre>
-<b>O'zgartirilgan tasvir namunalari: generated_dataset/train/images</b><br>
+<b>O'zgartirilgan tasvir namunalari: generated_dataset/train/images</b><br><br>
 <img src="./asset/GastrointestinalPolyp_train_images_sample.png" width="1024" height="auto"><br><br>
 
-<b>Kengaytirilgan niqob namunalari: generated_dataset/train/mask </b><br>
+<b>Kengaytirilgan niqob namunalari: generated_dataset/train/mask </b><br><br>
 <img src="./asset/GastrointestinalPolyp_train_masks_sample.png" width="1024" height="auto"><br>
 
 
@@ -91,8 +91,9 @@ train
 ...
 </pre>
 Qayta ishlangan tasvirlar <b>annotated</b> papkasida quyida ko'rsatilgandek chegaralangan to'rtburchak ichida
-kasalliklar aniqlangan jpg tasvir
-fayllari mavjud bo'ladi. <br><img src="./asset/train_annotated.png" width="1024" height="auto"><br>
+kasalliklar aniqlangan jpg tasvir fayllari mavjud bo'ladi. 
+<br>
+<br><img src="./asset/train_annotated.png" width="1024" height="auto"><br>
 
 <h3>
 Xulosa
