@@ -1,5 +1,5 @@
 <h2>
-GastrointestinalPolypDetection (2024/04/22)
+GI-Assistant (2024/04/22)
 </h2>
 Bu oshqozon-ichak kasalliklarni ednoskopik tasvirlardan aniqlash dasturi. (Bu to'liq dasturiy taminot emas Faqat kasalliklarni tasvirda belgilab beradi.)
 
