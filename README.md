@@ -17,7 +17,6 @@ https://www.kaggle.com/datasets/debeshjha1/kvasirseg
 
 <pre>
 Kvasir-SEG
-├─annotated_images
 ├─bbox
 ├─images
 └─masks
@@ -26,7 +25,7 @@ Kvasir-SEG
 <h3>
 3. Tasvirlarni ishlov berishdan oldin tayyorlab olamiz (Preprocessing)
 </h3>
-Biz tasvirlarni <a href=".resize_images_512x512.py">resize_images_512x512.py</a> dan foydalanib 3 ta <b>train</b>, <b>test</b> va <b>valid</b> ga ajratamiz vv barcha tasvirlarni o'lchamlarini bir xil qilamiz.
+Biz tasvirlarni <a href="https://github.com/Sulton21317/GI-assistant/blob/main/resize_images_512x512.py">resize_images_512x512.py</a> dan foydalanib 3 ta <b>train</b>, <b>test</b> va <b>valid</b> ga ajratamiz vv barcha tasvirlarni o'lchamlarini bir xil qilamiz.
 
 
 Skript quyidagicha tasvirlarni qayta ishlashni amalga oshiradi.<br>
@@ -66,7 +65,7 @@ Oshqozon-ichak kasalliklarini aniqlash uchun quyidagilarni amalga oshiramiz.
 
 generated_dataset ma'lumotlar to'plamidan oshqozon-ichak yarasi aniqlash va ularni belgilab boshqa tasvirda ko'rsatish
 uchun DetectedPolyps papkasini va fayllarini yaratish uchun
-<a href="./detect_polyp.py">detect_polyp.py</a> Python skriptini ishga tushiramiz.
+<a href="https://github.com/Sulton21317/GI-assistant/blob/main/detect_polyp.py">detect_polyp.py</a> Python skriptini ishga tushiramiz.
 <pre>pyton detect_polyp.py </pre> 
 Bu buyruq quyidagi DetectedPolyps papkasini yaratadi, ularda <b>test</b>, <b>train</b> va <b>valid</b> mavjud bo'ladi
 <pre>
