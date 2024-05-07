@@ -65,24 +65,25 @@ Oshqozon-ichak kasalliklarini aniqlash uchun quyidagilarni amalga oshiramiz.
 
 generated_dataset ma'lumotlar to'plamidan oshqozon-ichak yarasi aniqlash va ularni belgilab boshqa tasvirda ko'rsatish
 uchun DetectedPolyps papkasini va fayllarini yaratish uchun
-<a href="https://github.com/Sulton21317/GI-assistant/blob/main/detect_polyp.py">detect_polyp.py</a> Python skriptini ishga tushiramiz.
+<a href="https://github.com/Sulton21317/GI-assistant/blob/main/detect_polyp.py">detect_polyp.py</a> Python skriptini
+ishga tushiramiz.
 <pre>pyton detect_polyp.py </pre> 
 Bu buyruq quyidagi DetectedPolyps papkasini yaratadi, ularda <b>test</b>, <b>train</b> va <b>valid</b> mavjud bo'ladi
 <pre>
 ./DetectedPolyps
 ├─test
-│  └─annotated
+│  └─diseases
 ├─train
-│  └─annotated
+│  └─diseases
 └─valid
-    └─annotated
+    └─diseases
 </pre>
 Masalan, <b>train</b> papkasi juda ko'p jpg tasvir fayllari, qayta ishlangan izohli matn fayllari va izohli papka mavjud
 bo'ladi
 <br>
 <pre>
 train
-├─annotated
+├─diseases
 ├─flipped_cju0qkwl35piu0993l0dewei2.jpg
 ├─flipped_cju0qkwl35piu0993l0dewei2.txt
 ├─flipped_cju0qoxqj9q6s0835b43399p4.jpg
@@ -90,7 +91,7 @@ train
 ...
 </pre>
 Qayta ishlangan tasvirlar <b>annotated</b> papkasida quyida ko'rsatilgandek chegaralangan to'rtburchak ichida
-kasalliklar aniqlangan jpg tasvir fayllari mavjud bo'ladi. 
+kasalliklar aniqlangan jpg tasvir fayllari mavjud bo'ladi.
 <br>
 <br><img src="./asset/train_annotated.png" width="1024" height="auto"><br>
 
