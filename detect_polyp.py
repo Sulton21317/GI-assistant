@@ -1,4 +1,3 @@
-
 #
 # detect_polyp.py for generated_dataset generated_dataset
 # Create  annotation from the jpg segementation generated_dataset
@@ -11,9 +10,6 @@
 #  valid
 #   +--images
 #   +--masks
-
-
-
 
 
 import sys
@@ -209,3 +205,5 @@ if __name__ == "__main__":
             annotation.generate(input_subdir, output_subdir, debug=debug)
     except:
         traceback.print_exc()
+
+#%%
